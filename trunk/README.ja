@@ -1,0 +1,138 @@
+= MinCMS - Minimum Contents Management System
+初版:: 2009-07-07
+第二版:: 2009-11-11
+
+MinCMSは最小限のCMSを目指して作成したものです。
+できるだけ、多くの方に使って頂けるように、
+機能も一般的にみて中立なものを目指して作っています。
+MinCMSはそのため、以下の意味もあります。
+
+MinCMS Is Neutral CMS. :-)
+
+== 仕様概要
+* ユーザ
+MinCMSを使用する人はユーザ登録を行う必要があります。
+登録する際には以下の情報が必要です。
+
+username:: /[a-z0-9._-]/i (32byte)
+password:: /[a-z0-9._-]/i (32byte)
+表示用ユーザ名:: 約64文字 (192byte)
+メールアドレス:: メールアドレス (128byte)
+権限:: 以下の権限を選択
+
+管理者は"admin"というユーザになります。
+
+* 権限(authority)
+権限は以下の種類があり、登録ユーザに設定可能です。
+
+** 記事参照(1<<0)
+登録ユーザ限定機能(登録ユーザのみの記事参照)などのための権限です。
+** 記事作成(1<<1)
+所属サイト内で記事とカテゴリの作成が可能です。
+作成した場合は、査閲者の承認を得る必要があります。
+** 記事査閲(1<<2)
+所属サイト内で記事とカテゴリの査閲が可能です。
+査閲して承認することで公開待ちとなります。
+** 記事公開(1<<3)
+所属サイト内で記事とカテゴリの公開が可能です。
+すでに査閲されているものだけが公開対象となります。
+** ページ作成(1<<4)
+ページの作成、修正ができます。
+** ユーザ管理(1<<5)
+ユーザの作成、修正ができます。
+** サイト管理(1<<6)
+サイトの作成と所属ユーザの割り当てが可能です。
+** テンプレート管理(1<<7)
+テンプレートの変更が可能です。
+** 設定(1<<8)
+そのほかの設定変更が可能です。
+基本的には管理者以外使う必要はないでしょう。
+
+なお、管理者(admin)はすべての権限を持つことになります。
+
+* サイト(site)
+サイトとは、カテゴリ、記事のまとまりです。
+サイトには指定されたユーザが所属しており、所属ユーザが
+記事、カテゴリの作成、査閲、公開を行うことで
+サイト内は所属ユーザが管理できることになります。
+MinCMSではサイトを複数作成できますので、MinCMS内で
+複数のサイトを管理できるようになります。
+サイトを作成する際には以下の情報が必要です。
+
+サイトID:: /[0-9]/ (自動付与) (int)
+サイトパス:: /[a-z0-9._-]/i (32byte)
+表示用サイト名:: 約64文字 (192byte)
+共通連絡先:: 2**16 - 1 byte (text)
+
+* 記事(article)
+サイト内に記事を作成することができます。記事には3つの種類があります。
+** カテゴリ(category)
+記事をまとめる単位です。OSでのディレクトリ、フォルダと同じです。
+** 記事(article)
+公開したい文書など、所属ユーザが作成したWebページ1ページ分のものです。
+** URL(url)
+ダウンロードさせたいファイルのURLや外部参照URLを指定します。
+** テンプレート
+各表示ページのデフォルトテンプレートは以下の通りです。
+各テンプレートのサフィックス前に"-記事ID"または"-別名"をつけることで
+独自のテンプレートを作成することも可能です。
+サイト:: site.php
+記事:: article.php
+
+* ページ(page)
+Webサイト注意事項、サイトマップ、など記事以外の特別なページのことです。
+** テンプレート
+デフォルトテンプレートは以下の通りです。
+テンプレートのサフィックス前に"-記事ID"または"-別名"をつけることで
+独自のテンプレートを作成することも可能です。
+ページ:: page.php
+
+* 基本モジュール
+** 新着情報(カレンダー含む)
+新着情報の表示を提供します。カレンダー表示、RSS配信も可能です。
+** イベント情報(カレンダー含む)
+イベント情報の表示を提供します。カレンダー表示、RSS配信も可能です。
+** ダウンロード情報(カレンダー含む)
+ダウンロード情報の表示を提供します。カレンダー表示、RSS配信も可能です。
+
+== 必要なシステム
+Apache, PHP5, MySQL5
+
+== ファイル構成
+index.php
+config.php
+admin/index.php
+admin/sql
+admin/tmpl/default/footer.php
+admin/tmpl/default/header.php
+admin/tmpl/default/home.php
+admin/tmpl/default/login.php
+admin/tmpl/default/side-left.php
+admin/tmpl/default/style.css
+js/jquery.js
+lib/MinArticle.php
+lib/MinCMS.php
+lib/MinCalendar.php
+lib/MinDB.php
+lib/MinLogin.php
+lib/MinNode.php
+lib/MinPage.php
+lib/MinTemplate.php
+lib/MinUpload.php
+lib/func.php
+lib/func-admin.php
+lib/init.php
+content/module/sample/MyClass.php
+content/module/sample/func.php
+content/tmpl/default/article.php
+content/tmpl/default/footer.php
+content/tmpl/default/header.php
+content/tmpl/default/home.php
+content/tmpl/default/index.php
+content/tmpl/default/page.php
+content/tmpl/default/search.php
+content/tmpl/default/side-left.php
+content/tmpl/default/side-right.php
+content/tmpl/default/site.php
+content/tmpl/default/style.css
+content/uploads
