@@ -1,0 +1,111 @@
+body, div, img, h1 {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #e1f2d0 url(images/bg.jpg) repeat-y top center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	color: #222;
+}
+
+a {
+	text-decoration: none;
+	color: #75B03C;
+}
+a:hover {
+	text-decoration: underline;
+	color: #111;
+}
+
+#container {
+}
+
+#header {
+	background-color: #e1f2d0;
+}
+
+#header h1 {
+	font-size: 28px;
+	letter-spacing: -1px;
+	padding: 15px 0 0 20px;
+	color: #000;
+}
+#header p {
+	margin: 0;
+	color: #e1c70e;
+	padding: 5px 0 0 20px;
+	letter-spacing: -1px;
+	font-weight: 100;
+}
+
+#main {
+	background-color: #e1f2d0;
+	padding: 0 20px;
+}
+
+#main h2 {
+	margin: 10px 0 0 0;
+	font-size: 15px;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #75B03C;
+}
+form fieldset {
+	margin: 10px;
+	padding: 10px;
+}
+
+#main table {
+	width: 95%;
+	margin: 5px;
+	border: 1px solid #75B03C;
+	border-collapse: collapse;
+	line-height: 120%;
+}
+#main table th,
+#main table td {
+	padding: 4px;
+	border-right: 1px solid #75B03C;
+	border-bottom: 1px solid #75B03C;
+	vertical-align: middle;
+}
+th.kind { width: 10%; }
+th.delete { width: 15%; }
+
+.pagination {
+	font-size: 90%;
+	text-align: center;
+	margin: 5px 0px 5px 0px;
+	padding: 0px;
+	clear: both;
+}
+.pagination li {
+	display: inline;
+	list-style-type: none;
+	margin-right: 6px;
+	padding-left: 10px;
+	border-left: 1px solid #999;
+}
+.pagination li.begin {
+	border-left: 0px;
+	padding-left: 0px;
+}
+.pagination li.last {
+	border-right: 1px solid #999;
+	padding-right: 10px;
+}
+
+#footer {
+	text-align: center;
+	font-size: 11px;
+	color: #aaa;
+	margin: 40px 20px;
+	border-top: 1px dotted #aaa;
+	padding-top: 10px;
+}
+#footer a { color: #aaa; }
+#footer a:hover { color: #111; }

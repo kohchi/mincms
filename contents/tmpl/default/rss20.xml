@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:admin="http://webns.net/mvcb/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+	<channel>
+		<title>__##RSS_TITLE##__</title>
+		<link>__##RSS_URL##__</link>
+		<description>__##RSS_DESCRIPTION##__</description>
+		<language>ja</language>
+		<generator>サイト作成者</generator>
+		<pubDate>__##RSS_UPDATE##__</pubDate>
+		<copyright>サイト著作権名</copyright>
+
+		__##ITEMS##__
+	</channel>
+</rss>
