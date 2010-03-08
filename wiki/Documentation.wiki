@@ -2,8 +2,9 @@
 
 = Introduction =
 
-MinCMSの情報を記載しています。
-
+ここではMinCMSの情報を記載しています。
+MinCMSのインストールには若干のUNIXのスキルが必要です。
+*コマンドライン操作*ができない人には理解できないかもしれません。
 
 = Details =
 
@@ -23,8 +24,7 @@ MinCMSでは以下のものが必要です。
   # MinCMS/sql/example-init.sql を修正します。パスワードは必ず修正してください。
   # MinCMS/sql/example-init.sql をmysqlに流し込みます。
   # MinCMS/sql/example-init-table.sql をmysqlに流し込みます。
-  # MinCMS/config.php を修正します。
-以下の設定セクションを参照してください。
-  # MinCMS/lib/init.php を修正します。
-    以下の設定セクションを参照してください。
+  # MinCMS/config.php を修正します。以下の設定セクションを参照してください。
+  # MinCMS/lib/init.php を修正します。以下の設定セクションを参照してください。
+
 == 設定 ==
