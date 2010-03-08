@@ -1,0 +1,18 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+MinCMSの情報を記載しています。
+
+
+= Details =
+
+  * インストール要件
+  * 設定
+
+== インストール要件 ==
+MinCMSでは以下のものが必要です。
+* PHP5(5.2以上で開発しています)
+* MySQL5(5.0以上で開発しています)
+
+== 設定 ==
