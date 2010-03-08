@@ -46,19 +46,3 @@ CREATE TABLE IF NOT EXISTS page (
 	PRIMARY KEY (id),
 	FULLTEXT (title,description)
 );
-
---
--- INSERT INTO user VALUES ('admin', MD5('admin'), '管理者', 'test@example.jp', 0x7fffffff, '2009-07-14 11:00:00', '2009-07-14 11:00:00');
--- INSERT INTO user VALUES ('test1', MD5('test1'), 'テスト表示のみ', 'test@example.com', 0x01, '2009-07-15 11:00:00', '2009-07-15 11:00:00');
--- INSERT INTO user VALUES ('test2', MD5('test2'), 'テスト作成者', 'test@example.com', 0x02, '2009-07-15 11:00:00', '2009-07-15 11:00:00');
--- INSERT INTO config VALUES ('template', 'テンプレート', 'default', '2009-07-14 11:00:00', '2009-07-14 11:00:00');
--- INSERT INTO config VALUES ('title', 'CMSタイトル', 'ようこそMinCMS', '2009-07-14 15:00:00', '2009-07-14 15:00:00');
--- INSERT INTO config VALUES ('subtitle', 'CMSサブタイトル', 'MinCMSがあなたの手助けになれば', '2009-07-14 15:00:00', '2009-07-14 15:00:00');
---
-
-INSERT INTO site SET path='test0', name='テスト０', contact='addressテスト０のサイト', rtime='2009-07-31 15:00:00', utime='2009-07-31 15:00:00';
-INSERT INTO siteuser VALUES (LAST_INSERT_ID(), 'test1');
-INSERT INTO siteuser VALUES (LAST_INSERT_ID(), 'test2');
-INSERT INTO site SET path='test1', name='テスト１', contact='addressテスト１のサイト', rtime='2009-07-31 15:01:00', utime='2009-07-31 15:01:00';
-INSERT INTO siteuser VALUES (LAST_INSERT_ID(), 'test1');
-INSERT INTO siteuser VALUES (LAST_INSERT_ID(), 'test2');
