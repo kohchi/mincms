@@ -16,8 +16,15 @@ MinCMSでは以下のものが必要です。
 
   * *PHP5*(5.2以上で開発しています)
   * *MySQL5*(5.0以上で開発しています)
-  * 文字コードはPHP5、MySQLとも*UTF-8*です
+  * 文字コードはPHP5、MySQLとも *UTF-8* です
 
 == インストール ==
-
+  # ソースを解凍します。
+  # MinCMS/sql/example-init.sql を修正します。パスワードは必ず修正してください。
+  # MinCMS/sql/example-init.sql をmysqlに流し込みます。
+  # MinCMS/sql/example-init-table.sql をmysqlに流し込みます。
+  # MinCMS/config.php を修正します。
+    以下の設定セクションを参照してください。
+  # MinCMS/lib/init.php を修正します。
+    以下の設定セクションを参照してください。
 == 設定 ==
