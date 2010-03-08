@@ -20,11 +20,22 @@ MinCMSでは以下のものが必要です。
   * 文字コードはPHP5、MySQLとも *UTF-8* です
 
 == インストール ==
-  # ソースを解凍します。
-  # MinCMS/sql/example-init.sql を修正します。パスワードは必ず修正してください。
-  # MinCMS/sql/example-init.sql をmysqlに流し込みます。
-  # MinCMS/sql/example-init-table.sql をmysqlに流し込みます。
-  # MinCMS/config.php を修正します。以下の設定セクションを参照してください。
-  # MinCMS/lib/init.php を修正します。以下の設定セクションを参照してください。
+  # ソースを解凍します。MinCMSというディレクトリが作成されますので移動します。
+  # sql/example-init.sql を修正します。パスワードは必ず修正してください。
+  # sql/example-init.sql をmysqlに流し込みます。
+  # sql/example-init-table.sql をmysqlに流し込みます。
+  # config.php を修正します。以下の設定セクションを参照してください。
+  # lib/init.php を修正します。以下の設定セクションを参照してください。
 
 == 設定 ==
+=== config.php ===
+主な設定部分は以下の通りです。
+||MC_DB_HOST||sql/example-init.sqlに指定したホスト名を指定する||
+||MC_DB_NAME||sql/example-init.sqlに指定したデータベース名を指定する||
+||MC_DB_USER||sql/example-init.sqlに指定したユーザ名を指定する||
+||MC_DB_PASS||sql/example-init.sqlに指定したパスワードを指定する||
+||MC_FQDN||サイトのFQDN(フルドメイン名)を指定する||
+||MC_URI||ドメイン名を除いたMinCMSまでのパス名を指定する||
+||MC_URL_REWRITE||mod_rewriteを使ってパス名をrewriteする場合は`True`を指定する||
+
+=== lib/init.php ===
